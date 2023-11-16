@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('website');
 });
@@ -79,3 +80,17 @@ Route::get('tugas3', function () {
 
 Route::get('perkalian', 'App\Http\Controllers\QinController@index');
 Route::get('biodata', 'App\Http\Controllers\QinController@biodata');
+
+Route::get('showjam/{jam}', 'App\Http\Controllers\QinController@showtime');
+
+Route::get('/blog2', function () {
+    return view('blog');
+});
+
+Route::get('formulir', 'App\Http\Controllers\QinController@formulir');
+Route::get('/formulir/proses', 'App\Http\Controllers\QinController@proses');
+
+Route::get('/blog/tentang', function () {
+    return view('blog');
+});
+
