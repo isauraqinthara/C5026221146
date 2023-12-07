@@ -5,9 +5,9 @@
     <h2>www.malasngoding.com</h2>
 	<h3>Data Pegawai</h3>
 
-	<a href="/pegawai/tambah" class="btn-primary"> + Tambah Pegawai Baru</a>
+	<a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
+	<br><br>
 
-	<br/>
     <p>Cari Data Pegawai :</p>
 	<form action="/pegawai/cari" method="GET">
 		<input type="text" class="form-control" name="cari" placeholder="Cari Pegawai .."
@@ -31,6 +31,8 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
+                <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-success">View</a>
+                |
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
 				|
 				<a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>

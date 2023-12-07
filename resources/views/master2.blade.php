@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> @yield(judulhalaman)</title>
+    <title> @yield('judulhalaman')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Nunito&family=Poppins:wght@400;900&display=swap" rel="stylesheet">
