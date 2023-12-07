@@ -17,7 +17,7 @@
 
         </div>
         <div class="col-8">
-            @foreach($pegawai as $p)
+            @foreach($pegawai2 as $p)
     <fieldset disabled>
 	<form action="/pegawai/update" method="post" class="form-horizontal">
 		{{ csrf_field() }}

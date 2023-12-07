@@ -13,7 +13,7 @@
 	<br/>
 	<br/>
 
-	@foreach($pegawai as $p)
+	@foreach($pegawai2 as $p)
 
     <form action="/pegawai/update" method="post" class="form-horizontal">
 		{{ csrf_field() }}
