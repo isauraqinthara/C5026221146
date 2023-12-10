@@ -102,10 +102,20 @@ Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
 Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiController@edit');
 Route::post('/pegawai/update','App\Http\Controllers\PegawaiController@update');
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus');
-
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
 Route::get('/KeranjangBelanja','App\Http\Controllers\KeranjangBelanjaController@indexKB');
 Route::get('/KeranjangBelanja/beli','App\Http\Controllers\KeranjangBelanjaController@beli');
 Route::get('/KeranjangBelanja/batal/{ID}','App\Http\Controllers\KeranjangBelanjaController@batal');
 Route::post('/KeranjangBelanja/store','App\Http\Controllers\KeranjangBelanjaController@store');
+
+
+//route CRUD bank
+Route::get('/bank','App\Http\Controllers\BankController@IndexBank');
+Route::get('/bank/tambah','App\Http\Controllers\BankController@TambahBank');
+Route::post('/bank/StoreBank','App\Http\Controllers\BankController@StoreBank');
+Route::post('/bank/view','App\Http\Controllers\BankController@ViewBank');
+Route::get('/bank/edit/{KodeBank}','App\Http\Controllers\BankController@EditBank');
+Route::post('/bank/update','App\Http\Controllers\BankController@update');
+Route::get('/bank/hapus/{KodeBank}','App\Http\Controllers\BankController@hapus');
+Route::get('/bank/cari','App\Http\Controllers\BankController@cari');
