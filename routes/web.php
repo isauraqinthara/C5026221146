@@ -119,3 +119,13 @@ Route::get('/bank/edit/{KodeBank}','App\Http\Controllers\BankController@EditBank
 Route::post('/bank/update','App\Http\Controllers\BankController@update');
 Route::get('/bank/hapus/{KodeBank}','App\Http\Controllers\BankController@hapus');
 Route::get('/bank/cari','App\Http\Controllers\BankController@cari');
+
+//Route Chat
+Route::get('/chat','App\Http\Controllers\ChatController@IndexChat');
+Route::get('/chat/TambahChat','App\Http\Controllers\ChatController@TambahChat');
+Route::post('/chat/StoreChat','App\Http\Controllers\ChatController@StoreChat');
+Route::post('/chat/ViewChat','App\Http\Controllers\ChatController@ViewChat');
+Route::get('/chat/edit/{id}','App\Http\Controllers\ChatController@EditChat');
+Route::post('/chat/update','App\Http\Controllers\ChatController@update');
+Route::get('/chat/hapus/{id}','App\Http\Controllers\ChatController@hapus');
+Route::get('/chat/cari','App\Http\Controllers\ChatController@cari');
