@@ -1,3 +1,5 @@
+GAJADI DIPAKE
+
 @extends('masterChat')
 @section('JudulHalaman', 'Chat')
 @section('konten')

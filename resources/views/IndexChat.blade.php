@@ -2,45 +2,51 @@
 @section('judulhalaman', 'Chat')
 
 @section('konten')
-	<br><a href="/chat/TambahChat" class="btn btn-primary"> + Tambah Chat Baru</a>
-	<br><br>
+    <br><a href="/chat/TambahChat" class="btn btn-primary"> + Tambah Chat Baru</a>
+    <br><br>
 
-	<table class="table">
+    <table class="table">
         <thead class="thead-light">
-		<tr>
-            <th>id</th>
-			<th>pesan</th>
-            <th>opsi</th>
-		</tr>
+            <tr>
+                <th>id</th>
+                <th>pesan</th>
+            </tr>
         </thead>
-		@foreach($chat as $c)
-		<tr>
-            <td>{{ $c->id }}</td>
-			<td>{{ $c->pesan }}
-            @if ($c->pesan = ':))')
-                '1.png'
-            @elseif ($c->pesan = ':3')
-                '2.png'
-            @elseif ($c->pesan = ':P')
-                '3.png'
-            @elseif ($c->pesan = ':C')
-                '4.png'
-            @elseif ($c->pesan = ';)')
-                '5.png'
-            @endif
-            </td>
-			<td>
-                <a href="/chat/ViewChat/{{ $c->id }}" class="btn btn-success">View</a>
-				|
-				<a href="/chat/edit/{{ $c->id }}" class="btn btn-warning">Edit</a>
-				|
-				<a href="/chat/hapus/{{ $c->id }}" class="btn btn-danger">Hapus</a>
-			</td>
-		</tr>
-		@endforeach
-	</table>
+        @foreach($chat as $c)
+            <tr>
+                <td>{{ $c->id }}</td>
+                <td>
+                    @php
+                        $words = explode(' ', $c->pesan);
+                    @endphp
 
-    <!-- metode untuk membuat pagination
+                    @foreach($words as $word)
+                        @switch($word)
+                            @case(':))')
+                                <img src="{{ asset('/pictures/1.png') }}" alt=":))">
+                                @break
+                            @case(':3')
+                                <img src="{{ asset('/pictures/2.png') }}" alt=":3">
+                                @break
+                            @case(':P')
+                                <img src="{{ asset('/pictures/3.png') }}" alt=":P">
+                                @break
+                            @case(':C')
+                                <img src="{{ asset('/pictures/4.png') }}" alt=":C">
+                                @break
+                            @case(';)')
+                                <img src="{{ asset('/pictures/5.png') }}" alt=";)">
+                                @break
+                            @default
+                                {{ $word }}
+                        @endswitch
+                    @endforeach
+                </td>
+            </tr>
+        @endforeach
+    </table>
+
+    <!-- metode untuk membuat pagination -->
     {{ $chat->links() }}
 
 @endsection
